@@ -1,0 +1,202 @@
+/**
+* You can edit this whole file.
+*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --gray-0: #000000;
+  --gray-1: #222222;
+  --gray-2: #dddddd;
+  --gray-3: #fbfbfb;
+  --gray-4: #ffffff;
+  --primary: #8a2be2;
+  --secondary: #20d397;
+  --font-size-1: 1.5rem;
+  --font-size-2: 1.25rem;
+  --font-size-3: 1rem;
+  --font-weight-thin: 300;
+  --font-weight-bold: 600;
+  --font-weight-heavy: 800;
+  --spacer-1: 0.25rem;
+  --spacer-2: 0.5rem;
+  --spacer-3: 1rem;
+  --spacer-4: 1.5rem;
+  --spacer-5: 2rem;
+  --shadows: 7px 7px 7px rgba(0, 0, 0, 0.15);
+}
+
+html {
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-thin);
+  line-height: 1.44;
+}
+
+/* Headings */
+h1 {
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-bold);
+}
+/* End of Headings */
+
+/* Globals section */
+.wrapper {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+/* End of Globals section */
+
+/* Header section */
+.header {
+  background-color: var(--secondary);
+  padding: 8px 0;
+}
+
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  color: var(--gray-4);
+  font-weight: var(--font-weight-heavy);
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__logo img {
+  height: 36px;
+  cursor: pointer;
+  transition: 0.25s all;
+}
+
+.header__logo img:hover {
+  opacity: 0.75;
+}
+
+.header__nav ul {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header__nav li {
+  position: relative;
+}
+
+.header__nav li:hover::after {
+  content: "";
+  display: block;
+  background-color: var(--gray-4);
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: -4px;
+}
+
+.header__nav li a {
+  color: var(--gray-4);
+  font-weight: var(--font-weight-heavy);
+  text-decoration: none;
+}
+
+.active::after {
+  content: "";
+  display: block;
+  background-color: var(--gray-4);
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: -4px;
+}
+/* End of Header section */
+
+/* Main section */
+.main {
+  padding: 24px 0;
+}
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+/* End of Main section */
+
+/** 'Our pets' section **/
+.pets {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pets__list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .pets__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pets__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+
+  border: 2px solid var(--gray-2);
+  border-radius: 8px;
+  padding: 16px 12px;
+  box-shadow: var(--shadows);
+}
+
+.pets__item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pets__item__button {
+  background-color: var(--primary);
+  color: var(--gray-4);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  transition: 0.25s all;
+  cursor: pointer;
+}
+
+.pets__item__button:hover {
+  opacity: 0.75;
+}
+
+.pets__item__button img {
+  height: 20px;
+}
+/** End of 'Our pets' section **/
